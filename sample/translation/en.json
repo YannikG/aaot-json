@@ -1,0 +1,17 @@
+{
+    "translation" : {
+        "index" : {
+            "title" : "Samplepage",
+            "content" : [
+                {
+                    "title" : "Header 2",
+                    "text" : "Translate a Website is simple"
+                },
+                {
+                    "title" : "Header 2",
+                    "text" : "The Script can be integrated in a existing Webpage"
+                }
+            ]
+        }
+    }
+}

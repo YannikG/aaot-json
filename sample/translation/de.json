@@ -1,0 +1,17 @@
+{
+    "translation" : {
+        "index" : {
+            "title" : "Beispielseite",
+            "content" : [
+                {
+                    "title" : "Überschrift 2",
+                    "text" : "Das Übersetzten von Webseiten ist sehr einfach"
+                },
+                {
+                    "title" : "Überschrift 2",
+                    "text" : "Das Script kann sehr einfach in eine bestehende Seite eingebunden werden"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<html>
+    <head>
+            <title>aaot-JSON SAMPLE</title>            
+    </head>
+    <bod>
+        <h1 data-tk="index.title"></h1>
+        <h2 data-tk="index.content[0].title"></h2>
+        <p data-tk="index.content[0].text"></p>
+        <h2 data-tk="index.content[1].title"></h2>
+        <p data-tk="index.content[1].text"></p>
+        <h2>Controls</h2>
+        <a href="javascript:localize.switch('de')">Switch to DE</a> <br />
+        <a href="javascript:localize.switch('en')">Switch to EN</a>
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/js.cookie.js"></script>
+        <script src="../localize.js"></script>
+        <script>
+            $(document).ready(function() {
+                localize.url = "myapi/translations/&lang&",
+                localize.debug = true,
+                localize.setup();
+            });
+        </script>
+    </bod>
+</html>
