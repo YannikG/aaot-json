@@ -5,8 +5,11 @@ Localizer with Jquery and JSON Backend
 1. JQuery: https://jquery.com/
 2. JS-Cookie: https://github.com/js-cookie/js-cookie
 ### Installation
+#### Download
 1. Download Git Repo
 2. Include Script in your Project
+#### NPM
+`npm install aaot-json`
 ## How to use
 ### Setup
 ```javascript

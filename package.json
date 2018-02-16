@@ -1,0 +1,24 @@
+{
+  "name": "aaot-json",
+  "version": "1.0.1",
+  "description": "Localizer with JSON Backend",
+  "main": "localize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannikG/aaot-json.git"
+  },
+  "keywords": [
+    "localize",
+    "json",
+    "translator"
+  ],
+  "author": "Yannik Gartmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YannikG/aaot-json/issues"
+  },
+  "homepage": "https://github.com/YannikG/aaot-json#readme"
+}
