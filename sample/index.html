@@ -1,6 +1,7 @@
 <html>
     <head>
-            <title>aaot-JSON SAMPLE</title>            
+        <meta charset="utf-8">
+        <title>aaot-JSON SAMPLE</title>            
     </head>
     <bod>
         <h1 data-tk="index.title"></h1>
@@ -16,8 +17,12 @@
         <script src="../localize.js"></script>
         <script>
             $(document).ready(function() {
-                localize.url = "myapi/translations/&lang&",
-                localize.debug = true,
+                // Setup aaot-json
+                localize.url = "/sample/translation/&lang&.json";
+                localize.loadingType = "file";
+                localize.fallBack = "en";
+                localize.debug = true;
+                localize.langSupported = ["en", "de"];
                 localize.setup();
             });
         </script>

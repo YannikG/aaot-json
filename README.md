@@ -12,6 +12,9 @@ Localizer with Jquery and JSON Backend
 ```javascript
 localize.url = "yourapi/translation/&lang&"; // &lang& get replaced by the Script with the language
 localize.fallBack = "de";
+localize.langSupported = ["en", "de"];
+localize.cookieExpires = 3; // Default: 7 (Days)
+
 localize.successCallback = function() {..};
 localize.errorCallback = function() {...};
 localize.beforeSwitch = function() {...};
@@ -29,5 +32,4 @@ After switching the Language the Script calls automatically `localize.setup()`
 ## Note
 This Script is currently in Development.
 ### not working Things
-- Fallback Language
 - Load from a File

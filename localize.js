@@ -1,10 +1,13 @@
 // Script by Yannik Gartmann, 2018
-// Version 1.0.0
+// Version 1.0.1
 
 // Localizer Element
 var localize = {
     translation: undefined,
+    cookieExpires : 7,
     lang : undefined,
+    loadingType : "api",
+    langSupported : ["en"],
     fallBack : "en",
     apiTimeOut: 5000,
     debug: false,
@@ -33,25 +36,39 @@ var localize = {
     // Prep the localizer and start the first translation
     setup: function () {
         if (Cookies.get("lang")) {
-            this.lang = Cookies.get("lang");
+            localize.lang = Cookies.get("lang");
         } else {
             localize.lang = navigator.language || localize.fallBack;
             localize.lang = localize.lang.split('-')[0];
-        }        
+        }
+        if ($.inArray(localize.fallBack, localize.langSupported) == -1) {
+            throw new Error("localize.fallBack must be in localize.langSupported!");
+        }
+        if ($.inArray(localize.lang, localize.langSupported) == -1) {
+            localize.lang = localize.fallBack;
+        }
         url =  localize.url.replace("&lang&", localize.lang);
-        $.ajax({
-            type: "GET",
-            url: url,
-            timeout :localize. apiTimeOut,
-            dataType: "json",
-            success: function (data) {
-                localize.translation = data;
+        if (localize.loadingType ==  "file") {
+            $.getJSON(url, function(data) {
+                localize.translate = data;
                 localize.translate();
-            },
-            error: function () {
-                localize.errorCallback();
-            }
-        });
+            });
+        }
+        else if (localize.loadingType == "api") {
+            $.ajax({
+                type: "GET",
+                url: url,
+                timeout :localize. apiTimeOut,
+                dataType: "json",
+                success: function (data) {
+                    localize.translation = data;
+                    localize.translate();
+                },
+                error: function () {
+                    localize.errorCallback();
+                }
+            });
+        }
     },
 
     // Switch Language
@@ -59,7 +76,7 @@ var localize = {
     switch: function (newLang) {
         localize.beforeSwitch();
         localize.lang = newLang;
-        Cookies.set("lang", newLang, { path: '' });
+        Cookies.set("lang", newLang, { expires: localize.cookieExpires, path: '' });
         localize.setup();
     },
 
