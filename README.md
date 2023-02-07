@@ -1,3 +1,6 @@
+# ARCHIVED #
+This was a fun little project a long time ago. It's time to say goodbye and archive this repository.
+
 # And another Translator with JSON Backend (aaot-json)
 Localizer with Jquery and JSON Backend
 ## Setup
